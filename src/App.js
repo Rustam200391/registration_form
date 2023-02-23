@@ -1,10 +1,9 @@
 import './App.css';
+import {Form} from './Form/Form.jsx';
 
 function App() {
   return (
-    <div className="App">
-       
-    </div>
+    <Form/>
   );
 }
 
