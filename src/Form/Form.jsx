@@ -27,10 +27,10 @@ export function Form(username,mobile) {
                             <h2>Sign In</h2>
                             <span>register and enjoy the service</span>
 
-                            <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
-                                <input type="text" {...register("username")} placeholder='username' required  value = {value} onChange={e => setValue(e.target.value)}  />
+                            <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)} onChange={e => setValue(e.target.value)}>
+                                <input type="text" {...register("username")} placeholder='username' required />
                                 {/* зарегистрируйте свой ввод в hook, вызвав функцию "register" */}
-                                <input type="text" {...register("password")} placeholder='password' required  value = {value} onChange={e => setValue(e.target.value)} />
+                                <input type="text" {...register("password")} placeholder='password' required  />
 
                                 <input type="text" {...register("confirmpwd")} placeholder='confirm password' />
                                 <input type="text" {...register("mobile", { required : true, maxLength: 11 ,  pattern: {
@@ -38,11 +38,11 @@ export function Form(username,mobile) {
                                     /^(\+7)[\s(]*\d{3}[)\s]*\d{3}[\s-]?\d{2}[\s-]?\d{2}$/,
                                     // регулярное выражение при попытке ввода 8 и 7 цифра меняется на +7, так же что бы номер автоматически прописывался а вскобках и с разделением знаком " - "
                                     message: "Email must be valid",
-                                }, })} placeholder='mobile number' value = {value} onChange={e => setValue(e.target.value)} />
+                                }, })} placeholder='mobile number' />
 
                                 {errors.mobile?.type === "required" && "Mobile Number is required"}
                                 {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-                                <button className='btn' onSubmit onClick={() => console.log(`${username}: ${localStorage.getItem(username)}, ${mobile}: ${localStorage.getItem(mobile)}`)}>Sign In</button>
+                                <button className='btn' onSubmit onClick={() => console.log(`${username}: ${localStorage.getItem(username)}, ${localStorage.getItem(mobile)}`)}>Sign In</button>
                             </form>
                             
                         </div>
