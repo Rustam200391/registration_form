@@ -1,13 +1,16 @@
 import React from 'react';
-import './style.scss';
 import { useForm } from 'react-hook-form';
+// import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+
+import './style.scss';
+
 
 export function Form() {
 
     const { register, handleSubmit, formState: { errors } } = useForm()
     const onSubmit = data => console.log(data);
 
-    // console.log(watch('username'));
+    // console.log(entered data('username','password'...));
     
   return (
     <section>
