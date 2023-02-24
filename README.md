@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+1. Registration page (as on any website)
+2. Prescribe the logic of entering the phone number (so that when you try to enter 8 and 7, the digit changes to +7, so that the number is automatically registered in the back and separated by the "-" sign example: +7(999) 999-99-99
+3. Stylize (to your taste), you can take templates from the Internet for layout
+4. Make animations when you click on inputs and buttons, if there is an error about invalid data
+5. You can implement saving via localstorage
