@@ -20,13 +20,13 @@ body{
 }
 
 .register{
-  max-width: 978px;
+  /* max-width: 978px; */
   width: 100vw;
   display:flex;
-  border: 1px solid #e9ecef;
-  border-radius: 5px;
+  /* border: 1px solid #e9ecef;
+  border-radius: 5px; */
   /* box-shadow: 1px 3px 10px #e9ecef; */
-  background-color: white;
+  /* background-color: white; */
 }
 
 .register span{
