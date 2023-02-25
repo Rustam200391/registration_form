@@ -23,6 +23,8 @@ body{
   /* max-width: 978px; */
   width: 100vw;
   display:flex;
+  align-items: center;
+  justify-content: center;
   /* border: 1px solid #e9ecef;
   border-radius: 5px; */
   /* box-shadow: 1px 3px 10px #e9ecef; */
