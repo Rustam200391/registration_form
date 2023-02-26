@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group'//библиотека для анимации
+import React, { useState,useEffect } from 'react';
 import { useForm } from 'react-hook-form'//библиотека для формы
 import { ErrorMessage } from '@hookform/error-message';//библиотека сообщающая об ошибке в форме
 // import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-
+import {Title} from './Title'
 import './style.scss';
 
 
@@ -11,17 +10,16 @@ export const Form =(name,mobile) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm()//состояние формы регистрации хука
 
-    const [show,setShow] = useState()
 
     //состояние для анимации
 
     const onSubmit = (data) => {console.log(data)};
      // console.log(entered data('username','password'...));
 
-    const [value, setValue] = React.useState(() => localStorage.getItem(name) || '')
+    const [value, setValue] = useState(() => localStorage.getItem(name) || '')
     //нужно что бы все поля сохранились в localstorage
     
-        React.useEffect(() => {
+        useEffect(() => {
              localStorage.setItem("name",JSON.stringify(name))
             }, [name]);
 
@@ -31,18 +29,8 @@ export const Form =(name,mobile) => {
                 <section>
                     <div className="register">
                         <div className="col-1">
-                            <h2 onClick={() => setShow(!show)} >Sign In</h2>
-                            {show ? 'The service':'Enjoy'}
-                            
-                            <CSSTransition 
-                            in={show} 
-                            timeout={100}//время появления после клика на элемент
-                            classNames='alert'
-                            unmountOnExit
-                            >
-                            <h3>Registration process after filling out the form...</h3>
-                            </CSSTransition>
-
+                           
+                            <Title/>
                             <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)} onChange={e => setValue(e.target.value)}>
                                 <input type="text" {...register("username")} placeholder='username' required />
                                 {/* зарегистрируйте свой ввод в hook, вызвав функцию "register" */}
@@ -65,14 +53,8 @@ export const Form =(name,mobile) => {
 
                                 {errors.mobile?.type === "required" && "Mobile Number is required"}
                                 {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-                                <CSSTransition 
-                                    in={show} 
-                                    timeout={100}
-                                    classNames='alert'
-                                    unmountOnExit
-                                    >
+                               
                                 <button className='btn' onSubmit={onSubmit} onClick={() => console.log(`${name}: ${localStorage.getItem(name)}, ${localStorage.getItem(mobile)}`)}>Sign In</button>
-                                </CSSTransition>
                             </form>
                             
                         </div>
