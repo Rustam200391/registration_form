@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group'//библиотека для анимации
 import { useForm } from 'react-hook-form'//библиотека для формы
 import { ErrorMessage } from '@hookform/error-message';//библиотека сообщающая об ошибке в форме
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+// import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 
 import './style.scss';
 
