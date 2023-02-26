@@ -1,3 +1,9 @@
+<!-- https://react-hook-form.com/api/useformstate/errormessage/,
+https://www.npmjs.com/package/react-phone-number-input,
+https://blog.logrocket.com/using-localstorage-react-hooks/
+ -->
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
