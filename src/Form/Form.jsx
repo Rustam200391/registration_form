@@ -46,7 +46,7 @@ export const Form =(name,mobile) => {
                                 <input type="text" {...register("confirmpwd")} placeholder='confirm password'  />
                                 <input type="text" {...register("mobile", { required : true, maxLength: 12 ,  pattern: {
                                     value:
-                                    /^(\+7)[\s(]*\d{3}[)\s]*\d{3}[\s-]?\d{2}[\s-]?\d{2}$/,
+                                    /[\s(]*\d{3}[)\s]*/,
                                     // регулярное выражение при попытке ввода 8 и 7 цифра меняется на +7, так же что бы номер автоматически прописывался а вскобках и с разделением знаком " - "
                                     message: "Email must be valid",
                                 }, })} placeholder='mobile number' pattern="-?\d{1,3}\.\d+"/>
