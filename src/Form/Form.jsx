@@ -54,7 +54,7 @@ export const Form =(name,mobile) => {
                                 {errors.mobile?.type === "required" && "Mobile Number is required"}
                                 {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
                                
-                                <input type="submit" className='btn' onClick={() => console.log(`${name}: ${localStorage.getItem(name)}, ${localStorage.getItem(mobile)}`)}>Sign In</button>
+                                <input type="submit" className='btn' onClick={() => console.log(`${name}: ${localStorage.getItem(name)}, ${localStorage.getItem(mobile)}`)}/>Sign In
                             </form>
                             
                         </div>
