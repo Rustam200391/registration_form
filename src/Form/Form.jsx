@@ -1,5 +1,6 @@
 import React from 'react';
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
+import Cleave from 'cleave.js/react';
 import { Title } from './Title'
 import './style.scss';
 
@@ -11,6 +12,7 @@ export const Form = () => {
             localStorage.setItem(dataKey, JSON.stringify(data[dataKey]))
         }
     };
+    
 
     return (
         <section>
