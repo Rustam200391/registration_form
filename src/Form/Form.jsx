@@ -31,7 +31,7 @@ export const Form =(name,mobile) => {
                         <div className="col-1">
                            
                             <Title/>
-                            <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)} onChange={e => setValue(e.target.value)}>
+                            <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
                                 <input type="text" {...register("username")} placeholder='username' required />
                                 {/* зарегистрируйте свой ввод в hook, вызвав функцию "register" */}
                                 <ErrorMessage errors={errors} name="singleErrorInput" />
@@ -54,7 +54,7 @@ export const Form =(name,mobile) => {
                                 {errors.mobile?.type === "required" && "Mobile Number is required"}
                                 {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
                                
-                                <button className='btn' onSubmit={onSubmit} onClick={() => console.log(`${name}: ${localStorage.getItem(name)}, ${localStorage.getItem(mobile)}`)}>Sign In</button>
+                                <input type="submit" className='btn' onClick={() => console.log(`${name}: ${localStorage.getItem(name)}, ${localStorage.getItem(mobile)}`)}>Sign In</button>
                             </form>
                             
                         </div>
