@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group'//библиотека для анимации
+import { CSSTransition } from 'react-transition-group'
 
 export const Title = () => {
     const [show,setShow] = useState()
@@ -16,7 +16,7 @@ export const Title = () => {
     
         <CSSTransition 
         in={show} 
-        timeout={1000}//время появления после клика на элемент
+        timeout={1000}
         classNames='alert'
         unmountOnExit
         >

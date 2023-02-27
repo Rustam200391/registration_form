@@ -1,14 +1,10 @@
 import './App.css';
-import { withErrorBoundary } from 'react-error-boundary';
-// библиотека обработки ошибок Error Boundary
-import {Form} from './Form/Form.jsx';
+import { Form } from './Form/Form.jsx';
 
-function App() {
+export default function App() {
   return (
-    <Form/>
+    <Form />
   );
 }
 
-export default withErrorBoundary (App, {
-  fallback: <div>Error</div>
-});
+
