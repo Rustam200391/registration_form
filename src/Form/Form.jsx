@@ -1,18 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Title } from './Title'
-import {inputNumber} from './Input';
 import './style.scss';
 
 export const Form = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
+    const [phoneValue, setPhoneValue] = useState('')
 
     const onSubmit = (data) => {
         for (const dataKey in data) {
             localStorage.setItem(dataKey, JSON.stringify(data[dataKey]))
         }
     };
-    
+
+    const onChangeNumber = (event) => {
+        const prefixNumber = (str) => {
+            if (str === "7") {
+                return "7 (";
+            }
+
+            if (str === "8") {
+                return "7 (";
+            }
+
+            if (str === "9") {
+                return "7 (9";
+            }
+
+            return "7 (";
+        };
+
+        const value = event.target.value.replace(/\D+/g, "");
+        const numberLength = 11;
+
+        let result = '+';
+
+        for (let i = 0; i < value.length && i < numberLength; i++) {
+            switch (i) {
+                case 0:
+                    result += prefixNumber(value[i]);
+                    continue;
+                case 4:
+                    result += ") ";
+                    break;
+                case 7:
+                    result += "-";
+                    break;
+                case 9:
+                    result += "-";
+                    break;
+                default:
+                    break;
+            }
+            result += value[i];
+        }
+
+        setPhoneValue(result)
+    }
 
     return (
         <section>
@@ -38,21 +82,13 @@ export const Form = () => {
                         })} placeholder='confirm password' />
                         {errors.confirmPassword?.type === 'required' && <p role="alert">Confirm password name is required</p>}
                         
-                        <inputNumber/>
                         <input type="telNo" {...register("mobile", {
                             required: "Mobile number is required.",
-                            pattern: {
-                                value: /\d+/,
-                                message: "This input is number only."
-                            },
                             minLength: {
                                 value: 11,
                                 message: "This input must exceed 10 characters"
-                            }
-                        } )} placeholder='mobile number' onChange={(event) => {
-                            console.log('event.target.value', event.target.value)
-                            event.target.value.replace(/[^\d]/g, "").replace(/^8/, "+7").replace(/^9/, "+79")
-                        }} />
+                            },
+                        } )} placeholder='mobile number' onChange={onChangeNumber} value={phoneValue}/>
                         {errors.mobile?.type === "required" && "Mobile Number is required"}
                         {errors.mobile?.type === "minLength" && "Min Length 11 characters"}
 
@@ -64,3 +100,4 @@ export const Form = () => {
         </section>
         )
     }
+
