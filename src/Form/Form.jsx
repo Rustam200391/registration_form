@@ -1,6 +1,5 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import Cleave from 'cleave.js/react';
 import { Title } from './Title'
 import './style.scss';
 
@@ -50,7 +49,7 @@ export const Form = () => {
                             }
                         } )} placeholder='mobile number' onChange={(event) => {
                             console.log('event.target.value', event.target.value)
-                            event.target.value.replace(/\D/g, "").replace(/^8/, "+7").replace(/^9/, "+79")
+                            event.target.value.replace(/[^\d]/g, "").replace(/^8/, "+7").replace(/^9/, "+79")
                         }} />
                         {errors.mobile?.type === "required" && "Mobile Number is required"}
                         {errors.mobile?.type === "minLength" && "Min Length 11 characters"}
