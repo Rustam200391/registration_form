@@ -4,6 +4,8 @@ const [inputText, setInputText] = useState()
 
 //  <imput value = {inputText} onClick=((e)=>setInputText(e.target.value))>
 
+
+
 const input = document.querySelector(".telNo");
 
 const prefixNumber = (str) => {
