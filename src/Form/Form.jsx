@@ -39,7 +39,7 @@ export const Form = () => {
                         {errors.confirmPassword?.type === 'required' && <p role="alert">Confirm password name is required</p>}
                         
                         <inputNumber/>
-                        <input type="phone" {...register("mobile", {
+                        <input type="telNo" {...register("mobile", {
                             required: "Mobile number is required.",
                             pattern: {
                                 value: /\d+/,

@@ -1,7 +1,10 @@
+import {useState} from 'React';
 
-export const inputNumber = () => {
+const [inputText, setInputText] = useState()
 
- const input = document.querySelector("type=phone");
+//  <imput value = {inputText} onClick=((e)=>setInputText(e.target.value))>
+
+const input = document.querySelector(".telNo");
 
 const prefixNumber = (str) => {
   if (str === "7") {
@@ -51,5 +54,4 @@ input.addEventListener("input", (e) => {
   //
   input.value = result;
 });
-}
 // =================
