@@ -11,13 +11,7 @@ body{
   
 }
 
-.App {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 
 .register{
   /* max-width: 978px; */
@@ -42,7 +36,7 @@ body{
   margin: 2em auto;
 }
 
-#form >  input, .btn{
+#form >  input{
   border: 1px solid #e9ecef;
   padding: .9em 1em;
 }
