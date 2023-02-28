@@ -1,3 +1,4 @@
+To launch the application after cloning the repository, you need to install the dependencies
 <!-- https://react-hook-form.com/api/useformstate/errormessage/,
 https://www.npmjs.com/package/react-phone-number-input,
 https://blog.logrocket.com/using-localstorage-react-hooks/
