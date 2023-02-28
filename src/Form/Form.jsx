@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Title } from './Title'
+import {inputNumber} from './Input';
 import './style.scss';
 
 export const Form = () => {
@@ -36,8 +37,9 @@ export const Form = () => {
                             required: "Confirm password name is required"
                         })} placeholder='confirm password' />
                         {errors.confirmPassword?.type === 'required' && <p role="alert">Confirm password name is required</p>}
-
-                        <input type="text" {...register("mobile", {
+                        
+                        <inputNumber/>
+                        <input type="phone" {...register("mobile", {
                             required: "Mobile number is required.",
                             pattern: {
                                 value: /\d+/,
